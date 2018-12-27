@@ -5,11 +5,11 @@ author:             Zack Ku
 description:        "记录成长点滴，以汇聚成江河."
 reading_time:       false
 words_per_minute:   200
-logo:               'http://oboi2pfvn.bkt.clouddn.com/logo_me.jpg'
-background:         'http://oboi2pfvn.bkt.clouddn.com/placeholder-big.jpg'
+# logo:               'http://oboi2pfvn.bkt.clouddn.com/logo_me.jpg'
+# background:         'http://oboi2pfvn.bkt.clouddn.com/placeholder-big.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
-url:                http://zackku.com
+url:                http://starYellow966.github.io
 # Jekyll
 permalink:          /:title/
 markdown:           kramdown
@@ -37,7 +37,7 @@ google:
   #ad-client:
   #ad-slot:
 #bing-verify:
-email:              gza_scnu@163.com
+email:              star96_huang@163.com
 #twitter:            username
 #facebook:           username
 github:             zack-ku
