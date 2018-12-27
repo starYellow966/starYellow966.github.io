@@ -1,15 +1,15 @@
 # Site
-title:              Zack's Blog
+title:              3斤's Blog
 bio:                'Step forward everyday to achieve a great goal.'
-author:             Zack Ku
-description:        "记录成长点滴，以汇聚成江河."
+author:             3斤
+description:        "渣硕，记录日常生活、读书笔记与心得"
 reading_time:       false
 words_per_minute:   200
 # logo:               'http://oboi2pfvn.bkt.clouddn.com/logo_me.jpg'
 # background:         'http://oboi2pfvn.bkt.clouddn.com/placeholder-big.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
-url:                http://starYellow966.github.io
+url:                https://starYellow966.github.io
 # Jekyll
 permalink:          /:title/
 markdown:           kramdown
@@ -21,9 +21,9 @@ kramdown:
   toc_levels:       1..6
   enable_coderay:   false
 mathjax:            true
-sass:
-  sass_dir:         _sass
-  style:            compressed
+# sass:
+#   sass_dir:         _sass
+#   style:            compressed
 
 # Comments
 disqus_shortname:   taylantatli
@@ -32,7 +32,7 @@ disqus_shortname:   taylantatli
 # if you don't have any of social below, comment the line.
 google:
   #plus:            #username
-  analytics:        zackku
+  analytics:        starYellow966
   #verify:
   #ad-client:
   #ad-slot:
@@ -40,7 +40,7 @@ google:
 email:              star96_huang@163.com
 #twitter:            username
 #facebook:           username
-github:             zack-ku
+github:             starYellow966
 #stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
 #linkedin:          username
 #xing:              username
