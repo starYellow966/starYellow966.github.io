@@ -138,10 +138,10 @@ exturl: false
 # External url should start with http:// or https:// .
 menu:
   首页: / || home
-  #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
-  时间: /archives/ || archive
+  日志: /archives/ || archive
+  标签: /tags/ || tags
+  分类: /categories/ || th
+  关于我: /about/ || user
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
