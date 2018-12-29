@@ -114,7 +114,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11455432-1fe05ddcc8b12d0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11455432-d6cf9c4d7bfa7c0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-12-29T02:20:05.464Z">
+<meta property="og:updated_time" content="2018-12-29T02:27:13.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git &amp; Github 常见命令与概念">
 <meta name="twitter:description" content="一、常见命令 git init : 初始化 git 仓库，即将一个文件夹初始化为一个 git 仓库。具体的操作是创建一个 .git 隐藏文件夹 git status : 查看仓库的状态 git add &amp;lt;file&amp;gt; : 将文件提交到暂存区 git commit -m &amp;lt;代码提交信息&amp;gt; : 将暂存区的文件提交到仓库中，并附带说明信息 git log : 查看所有产生的 com">
@@ -398,7 +398,7 @@
                 
               
 
-              <time title="创建时间：2018-12-29 00:05:29 / 修改时间：02:20:05" itemprop="dateCreated datePublished" datetime="2018-12-29T00:05:29Z">2018-12-29</time>
+              <time title="创建时间：2018-12-29 00:05:29 / 修改时间：02:27:13" itemprop="dateCreated datePublished" datetime="2018-12-29T00:05:29Z">2018-12-29</time>
             
 
             
@@ -535,26 +535,27 @@
 <p>命令生成的密钥会存放在两个文件 <strong>id_rsa</strong> 和 <strong>id_rsa.pub</strong> ，而 <strong>id_rsa</strong> 是密钥，<strong>id_rsa.pub</strong> 就是公钥。这两文件默认分别在如下目录里生成：</p>
 <p>Linux/Mac 系统 在 <code>~/.ssh</code> 下，win系统在 <code>/c/Documents and Settings/username/.ssh</code> 下，都是隐藏文件，相信你们有办法查看的。</p>
 <p>接下来要做的是把 <strong>id_rsa.pub</strong> 的内容添加到 GitHub 上，这样你本地的 <strong>id_rsa</strong> 密钥跟 GitHub 上的 <strong>id_rsa.pub</strong> 公钥进行配对，授权成功才可以提交代码。</p>
-<h2 id="2-5-Github-操作"><a href="#2-5-Github-操作" class="headerlink" title="2.5 Github 操作"></a>2.5 Github 操作</h2><h4 id="Push"><a href="#Push" class="headerlink" title="Push"></a><strong>Push</strong></h4><p>如果你本地代码有更新，那么就需要把本地代码推到远程仓库，这样本地仓库跟远程仓库就可以保持同步了。</p>
-<h4 id="Pull"><a href="#Pull" class="headerlink" title="Pull"></a><strong>Pull</strong></h4><p>如果远程仓库有更新，那么需要把远程仓库的最新代码更新到本地，然后保证两端代码的同步。<strong>一般我们在 push 之前都会先 pull ，这样不容易冲突。</strong></p>
-<h4 id="先有远程仓库，后有本地仓库：Clone"><a href="#先有远程仓库，后有本地仓库：Clone" class="headerlink" title="先有远程仓库，后有本地仓库：Clone"></a>先有远程仓库，后有本地仓库：<strong>Clone</strong></h4><p>使用 <code>git clone</code> 命令，将远程仓库复制到本地中。然后，修改本地仓库并进行 <code>git commit</code>。之后，<code>git push origin master</code> 将本地仓库的修改提交到远程仓库中</p>
+<h2 id="2-5-Github-操作"><a href="#2-5-Github-操作" class="headerlink" title="2.5 Github 操作"></a>2.5 Github 操作</h2><h3 id="Push"><a href="#Push" class="headerlink" title="Push"></a><strong>Push</strong></h3><p>如果你本地代码有更新，那么就需要把本地代码推到远程仓库，这样本地仓库跟远程仓库就可以保持同步了。</p>
+<h3 id="Pull"><a href="#Pull" class="headerlink" title="Pull"></a><strong>Pull</strong></h3><p>如果远程仓库有更新，那么需要把远程仓库的最新代码更新到本地，然后保证两端代码的同步。<strong>一般我们在 push 之前都会先 pull ，这样不容易冲突。</strong></p>
+<h3 id="先有远程仓库，后有本地仓库：Clone"><a href="#先有远程仓库，后有本地仓库：Clone" class="headerlink" title="先有远程仓库，后有本地仓库：Clone"></a>先有远程仓库，后有本地仓库：<strong>Clone</strong></h3><p>使用 <code>git clone</code> 命令，将远程仓库复制到本地中。然后，修改本地仓库并进行 <code>git commit</code>。之后，<code>git push origin master</code> 将本地仓库的修改提交到远程仓库中</p>
 <p>通过 <code>git clone</code> 命令复制的仓库，不需要使用 <code>git init</code> 初始化，同时也不需要声明与远程仓库关联（因为已经声明了）。</p>
-<h4 id="先有本地仓库，后有远程仓库：关联本地已有项目"><a href="#先有本地仓库，后有远程仓库：关联本地已有项目" class="headerlink" title="先有本地仓库，后有远程仓库：关联本地已有项目"></a>先有本地仓库，后有远程仓库：关联本地已有项目</h4><p>如果我们本地已经有一个完整的 git 仓库，并且已经进行了很多次 commit ，我们想将本地仓库提交到 github 上。</p>
+<h3 id="先有本地仓库，后有远程仓库：关联本地已有项目"><a href="#先有本地仓库，后有远程仓库：关联本地已有项目" class="headerlink" title="先有本地仓库，后有远程仓库：关联本地已有项目"></a>先有本地仓库，后有远程仓库：关联本地已有项目</h3><p>如果我们本地已经有一个完整的 git 仓库，并且已经进行了很多次 commit ，我们想将本地仓库提交到 github 上。</p>
 <p>假设本地仓库 test2，要提交到 github test 项目中，一般步骤是：</p>
 <ol>
 <li>在 github 创建 test 项目</li>
 <li>在 test2 目录中输入 <code>git remote add origin git@github.com:xxxx/test.git</code> 将本地 test2 项目与 github 的 test 项目关联起来</li>
 <li><code>git push origin master</code> </li>
 </ol>
-<h4 id="合并操作：merge-amp-rebase"><a href="#合并操作：merge-amp-rebase" class="headerlink" title="合并操作：merge &amp; rebase"></a>合并操作：merge &amp; rebase</h4><p><code>git merge branch_a</code> 与 <code>git rebase branch_a</code> 的效果是一样，都是将 <code>branch_a</code> 分支合并到当前的分支中。但两者合并方式不同：rebase 跟 merge 的区别你们可以理解成有两个书架，你需要把两个书架的书整理到一起去，</p>
+<h3 id="合并操作：merge-amp-rebase"><a href="#合并操作：merge-amp-rebase" class="headerlink" title="合并操作：merge &amp; rebase"></a>合并操作：merge &amp; rebase</h3><p><code>git merge branch_a</code> 与 <code>git rebase branch_a</code> 的效果是一样，都是将 <code>branch_a</code> 分支合并到当前的分支中。但两者合并方式不同：rebase 跟 merge 的区别你们可以理解成有两个书架，你需要把两个书架的书整理到一起去，</p>
 <ul>
 <li>第一种做法是 merge ，比较粗鲁暴力，就直接腾出一块地方把另一个书架的书全部放进去，虽然暴力，但是这种做法你可以知道哪些书是来自另一个书架的；</li>
 <li>第二种做法就是 rebase ，他会把两个书架的书先进行比较，按照购书的时间来给他重新排序，然后重新放置好，这样做的好处就是合并之后的书架看起来很有逻辑，但是你很难清晰的知道哪些书来自哪个书架。</li>
 </ul>
-<h4 id="合并冲突"><a href="#合并冲突" class="headerlink" title="合并冲突"></a>合并冲突</h4><p>如果两个分支 a,b 同时修改了同一个位置时，合并到 master 时就会报冲突。不管两个分支合并的先后顺序、中间是否还合并了其他的分支（即任何情况下），都会报冲突。</p>
+<h3 id="合并冲突"><a href="#合并冲突" class="headerlink" title="合并冲突"></a>合并冲突</h3><p>如果两个分支 a,b 同时修改了同一个位置时，合并到 master 时就会报冲突。不管两个分支合并的先后顺序、中间是否还合并了其他的分支（即任何情况下），都会报冲突。</p>
 <p>虽然会报冲突，但在发生冲突的位置，会显示出两个分支修改的内容。你需要手动地进行正确的合并后，再 <code>git add .</code> 与 <code>git commit</code> 就可以了。</p>
-<h1 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h1><ol>
-<li><a href="https://zhuanlan.zhihu.com/p/21487817" target="_blank" rel="noopener">stormzhang 从 0 开始学习 GitHub 系列</a></li>
+<h1 id="三、参考"><a href="#三、参考" class="headerlink" title="三、参考"></a>三、参考</h1><p>参考文献如下：</p>
+<ol>
+<li><a href="https://zhuanlan.zhihu.com/p/21487817" target="_blank" rel="noopener">stormzhang 从 0 开始学习 GitHub 系列（强烈推荐）</a></li>
 <li><a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="noopener">git - 简明指南</a></li>
 </ol>
 
@@ -765,7 +766,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、常见命令"><span class="nav-number">1.</span> <span class="nav-text">一、常见命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-分支相关的命令"><span class="nav-number">1.1.</span> <span class="nav-text">1.2 分支相关的命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-标签相关的命令"><span class="nav-number">1.2.</span> <span class="nav-text">1.3 标签相关的命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-SSH"><span class="nav-number">1.3.</span> <span class="nav-text">1.4 SSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Github-操作"><span class="nav-number">1.4.</span> <span class="nav-text">1.5 Github 操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-补充命令"><span class="nav-number">1.5.</span> <span class="nav-text">1.6 补充命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、常用概念"><span class="nav-number">2.</span> <span class="nav-text">二、常用概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-工作区、暂存区与-HEAD"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 工作区、暂存区与 HEAD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-分支-branch"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 分支 branch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-标签-tag"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 标签 tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-SSH"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 SSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Github-操作"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 Github 操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Push"><span class="nav-number">2.5.0.1.</span> <span class="nav-text">Push</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pull"><span class="nav-number">2.5.0.2.</span> <span class="nav-text">Pull</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#先有远程仓库，后有本地仓库：Clone"><span class="nav-number">2.5.0.3.</span> <span class="nav-text">先有远程仓库，后有本地仓库：Clone</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#先有本地仓库，后有远程仓库：关联本地已有项目"><span class="nav-number">2.5.0.4.</span> <span class="nav-text">先有本地仓库，后有远程仓库：关联本地已有项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合并操作：merge-amp-rebase"><span class="nav-number">2.5.0.5.</span> <span class="nav-text">合并操作：merge &amp; rebase</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合并冲突"><span class="nav-number">2.5.0.6.</span> <span class="nav-text">合并冲突</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#参考："><span class="nav-number">3.</span> <span class="nav-text">参考：</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、常见命令"><span class="nav-number">1.</span> <span class="nav-text">一、常见命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-分支相关的命令"><span class="nav-number">1.1.</span> <span class="nav-text">1.2 分支相关的命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-标签相关的命令"><span class="nav-number">1.2.</span> <span class="nav-text">1.3 标签相关的命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-SSH"><span class="nav-number">1.3.</span> <span class="nav-text">1.4 SSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Github-操作"><span class="nav-number">1.4.</span> <span class="nav-text">1.5 Github 操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-补充命令"><span class="nav-number">1.5.</span> <span class="nav-text">1.6 补充命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、常用概念"><span class="nav-number">2.</span> <span class="nav-text">二、常用概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-工作区、暂存区与-HEAD"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 工作区、暂存区与 HEAD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-分支-branch"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 分支 branch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-标签-tag"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 标签 tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-SSH"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 SSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Github-操作"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 Github 操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Push"><span class="nav-number">2.5.1.</span> <span class="nav-text">Push</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pull"><span class="nav-number">2.5.2.</span> <span class="nav-text">Pull</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#先有远程仓库，后有本地仓库：Clone"><span class="nav-number">2.5.3.</span> <span class="nav-text">先有远程仓库，后有本地仓库：Clone</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#先有本地仓库，后有远程仓库：关联本地已有项目"><span class="nav-number">2.5.4.</span> <span class="nav-text">先有本地仓库，后有远程仓库：关联本地已有项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并操作：merge-amp-rebase"><span class="nav-number">2.5.5.</span> <span class="nav-text">合并操作：merge &amp; rebase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并冲突"><span class="nav-number">2.5.6.</span> <span class="nav-text">合并冲突</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、参考"><span class="nav-number">3.</span> <span class="nav-text">三、参考</span></a></li></ol></div>
             
 
           </div>
