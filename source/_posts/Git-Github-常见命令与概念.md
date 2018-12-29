@@ -102,21 +102,21 @@ Linux/Mac 系统 在 `~/.ssh` 下，win系统在 `/c/Documents and Settings/user
 
 ## 2.5 Github 操作
 
-####  **Push** 
+###  **Push** 
 
 如果你本地代码有更新，那么就需要把本地代码推到远程仓库，这样本地仓库跟远程仓库就可以保持同步了。
 
-#### **Pull** 
+### **Pull** 
 
 如果远程仓库有更新，那么需要把远程仓库的最新代码更新到本地，然后保证两端代码的同步。**一般我们在 push 之前都会先 pull ，这样不容易冲突。**
 
-#### 先有远程仓库，后有本地仓库：**Clone** 
+### 先有远程仓库，后有本地仓库：**Clone** 
 
 使用 `git clone` 命令，将远程仓库复制到本地中。然后，修改本地仓库并进行 `git commit`。之后，`git push origin master` 将本地仓库的修改提交到远程仓库中
 
 通过 `git clone` 命令复制的仓库，不需要使用 `git init` 初始化，同时也不需要声明与远程仓库关联（因为已经声明了）。
 
-#### 先有本地仓库，后有远程仓库：关联本地已有项目
+### 先有本地仓库，后有远程仓库：关联本地已有项目
 
 如果我们本地已经有一个完整的 git 仓库，并且已经进行了很多次 commit ，我们想将本地仓库提交到 github 上。
 
@@ -126,19 +126,22 @@ Linux/Mac 系统 在 `~/.ssh` 下，win系统在 `/c/Documents and Settings/user
 2. 在 test2 目录中输入 `git remote add origin git@github.com:xxxx/test.git` 将本地 test2 项目与 github 的 test 项目关联起来
 3. `git push origin master` 
 
-#### 合并操作：merge & rebase
+### 合并操作：merge & rebase
 
 `git merge branch_a` 与 `git rebase branch_a` 的效果是一样，都是将 `branch_a` 分支合并到当前的分支中。但两者合并方式不同：rebase 跟 merge 的区别你们可以理解成有两个书架，你需要把两个书架的书整理到一起去，
 - 第一种做法是 merge ，比较粗鲁暴力，就直接腾出一块地方把另一个书架的书全部放进去，虽然暴力，但是这种做法你可以知道哪些书是来自另一个书架的；
 - 第二种做法就是 rebase ，他会把两个书架的书先进行比较，按照购书的时间来给他重新排序，然后重新放置好，这样做的好处就是合并之后的书架看起来很有逻辑，但是你很难清晰的知道哪些书来自哪个书架。
 
-#### 合并冲突
+### 合并冲突
 
 如果两个分支 a,b 同时修改了同一个位置时，合并到 master 时就会报冲突。不管两个分支合并的先后顺序、中间是否还合并了其他的分支（即任何情况下），都会报冲突。
 
 虽然会报冲突，但在发生冲突的位置，会显示出两个分支修改的内容。你需要手动地进行正确的合并后，再 `git add .` 与 `git commit` 就可以了。
 
 
-# 参考：
-1. [stormzhang 从 0 开始学习 GitHub 系列](https://zhuanlan.zhihu.com/p/21487817)
+# 三、参考
+
+参考文献如下：
+
+1. [stormzhang 从 0 开始学习 GitHub 系列（强烈推荐）](https://zhuanlan.zhihu.com/p/21487817)
 2. [git - 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
