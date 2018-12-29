@@ -455,112 +455,23 @@
       
         
           
-            <h1 id="一、常见命令"><a href="#一、常见命令" class="headerlink" title="一、常见命令"></a>一、常见命令</h1><ul>
-<li><code>git init</code> : 初始化 git 仓库，即将一个文件夹初始化为一个 git 仓库。具体的操作是创建一个 <code>.git</code> 隐藏文件夹</li>
-<li><code>git status</code> : 查看仓库的状态</li>
-<li><code>git add &lt;file&gt;</code> : 将文件提交到暂存区</li>
-<li><code>git commit -m &lt;代码提交信息&gt;</code> : 将暂存区的文件提交到仓库中，并附带说明信息</li>
-<li><code>git log</code> : 查看所有产生的 commit 记录</li>
-<li><code>git config -l</code> : 查看自己的配置，默认配置都在<code>.git/config</code> 文件中</li>
-</ul>
-<h2 id="1-2-分支相关的命令"><a href="#1-2-分支相关的命令" class="headerlink" title="1.2 分支相关的命令"></a>1.2 分支相关的命令</h2><ul>
-<li><code>git branch &lt;branch_name&gt;</code> : 如果不加上 <code>&lt;branch_name&gt;</code>，查看当前分支情况。如果加上，就是创建一个分支。</li>
-<li><code>git checkout &lt;branch_name&gt;</code> : 切换到<code>&lt;branch_name&gt;</code>的分支上</li>
-<li><code>git checkout -b &lt;branch_name&gt;</code> : 创建一个分支并切换到这个分支上，效果相当于合并上面 2 个命令。</li>
-<li><code>git merge &lt;branch_name&gt;</code> : 将 <code>&lt;branch_name&gt;</code> 分支合并到当前所在的分支上</li>
-<li><code>git branch -d &lt;branch_name&gt;</code> : 将 <code>&lt;branch_name&gt;</code> 分支删除</li>
-<li><code>git branch -D &lt;branch_name&gt;</code> : 将 <code>&lt;branch_name&gt;</code> 分支强制删除。如果 <code>&lt;branch_name&gt;</code> 分支存在未合并的代码时，那么用 <code>-d</code> 是删除不了。</li>
-</ul>
-<h2 id="1-3-标签相关的命令"><a href="#1-3-标签相关的命令" class="headerlink" title="1.3 标签相关的命令"></a>1.3 标签相关的命令</h2><ul>
-<li><code>git tag</code> : 查看历史 tag 记录。</li>
-<li><code>git tag &lt;tag_name&gt; &lt;commit_id&gt;</code> : 在指定提交 id 上创建一个 tag。如果不写 <code>&lt;commit_id&gt;</code> ，那就在最新的 commit 上创建一个 tag。</li>
-<li><code>git checkout &lt;tag_name&gt;</code> : 切换到 <code>&lt;tag_name&gt;</code> 标签</li>
-<li><code>git show &lt;tag_name&gt;</code> : 查看标签信息</li>
-<li><code>git tad -d &lt;tag_name&gt;</code> : 删除标签</li>
-<li><code>git push origin &lt;tag_name&gt;</code> : 将某个标签推送到远程仓库</li>
-<li><code>git push origin :refs/tags/&lt;tag_name&gt;</code> : 可以删除一个远程标签。</li>
-</ul>
-<h2 id="1-4-SSH"><a href="#1-4-SSH" class="headerlink" title="1.4 SSH"></a>1.4 SSH</h2><p>提前申明， windows 系统并不自带 SSH， 安装了 Git 之后才带有 SSH。</p>
-<ul>
-<li><code>ssh-keygen -t rsa</code> : 指定 rsa 算法生成密钥。</li>
-<li><code>ssh -T git@github.com</code> : 测试 ssh 是否成功添加到 github 中</li>
-</ul>
-<h2 id="1-5-Github-操作"><a href="#1-5-Github-操作" class="headerlink" title="1.5 Github 操作"></a>1.5 Github 操作</h2><ul>
-<li><code>git clone ...</code> : 将 github 项目复制到本地的当前目录</li>
-<li><code>git push origin &lt;branch_name&gt;</code> : 把当前分支中本地代码同步到远程 &lt;branch_name&gt; 分支</li>
-<li><code>git pull orgin &lt;branch_name&gt;</code> : 把远程 &lt;branch_name&gt; 分支的最新的代码同步到本地当前分支中</li>
-<li><code>get remote add origin git@github.com:xxx/xxxx.git</code> : 将当前本地仓库与远程进行联接</li>
-<li><code>git remote -v</code> : 查看我们当前项目有哪些远程仓库</li>
-</ul>
-<h2 id="1-6-补充命令"><a href="#1-6-补充命令" class="headerlink" title="1.6 补充命令"></a>1.6 补充命令</h2><ul>
-<li><strong>alias</strong> 别名<ul>
-<li><code>git config --global alias.&lt;别名&gt; &quot;&lt;原命令&gt;&quot;</code>。比如 <code>git config --global alias.c &quot;checkout&quot;</code>，之后 <code>git c</code> == <code>git checkout</code></li>
-</ul>
-</li>
-<li><p><strong>diff</strong></p>
-<ul>
-<li><code>git diff</code> : 比较工作区文件和暂存区文件差异。如果加上文件名，就仅比较这个文件在工作区与暂存区的区别</li>
-<li><code>git diff &lt;commit_id1&gt; &lt;commit_id2&gt;</code> : 比较两次提交之间的差异</li>
-</ul>
-</li>
-<li><p><strong>checkout</strong></p>
-<ul>
-<li>作用 1 ：切换分支、标签以及 commit。本质是「用某个 HEAD 中的最新内容替换掉你的工作区中的文件」。切换时，暂存区的内容不受影响但相当于在切换前执行了 <code>git stash</code>。</li>
-<li>作用 2 ：撤销还没进入暂存区的修改的作用。举个例子，假设我们在一个分支开发一个小功能，刚写完一半，这时候需求变了，而且是大变化，之前写的代码完全用不了了，好在你刚写，甚至都没有 git add 进暂存区，这个时候很简单的一个操作就直接把原文件还原：<code>git checkout a.md</code>。注意，checkout 命令只能撤销还没有 add 进暂存区的文件。</li>
-</ul>
-</li>
-<li><strong>stash</strong><ul>
-<li>作用：把当前分支所有还没有 commit 的代码先暂存起来。</li>
-<li>运用场景：假设我们正在一个新的分支做新的功能，这个时候突然有一个紧急的bug需要修复，而且修复完之后需要立即发布。当然你说我先把刚写的一点代码进行提交不就行了么？这样理论上当然是ok的，但是这会产品垃圾commit，原则上我们每次的commit都要有实际的意义，你的代码只是刚写了一半，还没有什么实际的意义是不建议就这样commit的，那么就用 <code>git stash</code> 保留。</li>
-<li><code>git stash</code> : 把当前分支所有没有 commit 的代码先暂存起来</li>
-<li><code>git stash list</code> : 查看所有 stash 记录</li>
-<li><code>git stash apply</code> : 将暂存的代码还原</li>
-<li><code>git stash drop</code> : 把最近一条 stash 记录删除。<em>注意：每次还原代码后，最好删除这条 stash 记录</em></li>
-<li><code>git stash pop</code> == <code>git stash apply</code> + <code>git stash drop</code></li>
-<li>注意：其实，执行了  <code>git add</code> 的数据在切换分支时，会自动暂存一起。本质上，是因为切换分支不影响暂存区的数据。但需要手动恢复。</li>
-</ul>
-</li>
-</ul>
-<h1 id="二、常用概念"><a href="#二、常用概念" class="headerlink" title="二、常用概念"></a>二、常用概念</h1><h2 id="2-1-工作区、暂存区与-HEAD"><a href="#2-1-工作区、暂存区与-HEAD" class="headerlink" title="2.1 工作区、暂存区与 HEAD"></a>2.1 工作区、暂存区与 HEAD</h2><ul>
-<li>工作区就是你还没有执行 <code>git add</code> 的文件，它持有实际文件；</li>
-<li>暂存区就是你执行了 <code>git add</code> 但没执行 <code>git commit</code> 的文件，它像个缓存区域，临时保存你的改动；</li>
-<li>HEAD就是你执行完 <code>git commit</code> 文件，它指向你最后一次提交的结果。</li>
-</ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/11455432-1fe05ddcc8b12d0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="工作区、暂存区与 HEAD   参考：http://rogerdudler.github.io/git-guide/index.zh.html"></p>
-<p>在实际中，工作区有一个隐藏目录 <code>.git</code> ，它不属于工作区，而是 Git 的版本库。Git 的版本库里存了很多东西，其中最重要的就是称为 stage（或者叫 index ）的暂存区，还有Git为我们自动创建的第一个分支 master，以及指向master的一个指针叫 HEAD。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/11455432-d6cf9c4d7bfa7c0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="实际目录中，三者的联系 参考：https://www.liaoxuefeng.com"></p>
-<h2 id="2-2-分支-branch"><a href="#2-2-分支-branch" class="headerlink" title="2.2 分支 branch"></a>2.2 分支 branch</h2><p><a href="https://zhuanlan.zhihu.com/p/21487817" target="_blank" rel="noopener">stormzhang 从0开始学习 GitHub 系列之「团队合作利器 Branch」</a></p>
-<h2 id="2-3-标签-tag"><a href="#2-3-标签-tag" class="headerlink" title="2.3 标签 tag"></a>2.3 标签 tag</h2><p>本质：标签作用于提交上，可以看成是某个提交的别称。</p>
-<p>运用：主要用于标记软件的版本号。</p>
-<h2 id="2-4-SSH"><a href="#2-4-SSH" class="headerlink" title="2.4 SSH"></a>2.4 SSH</h2><p>简单点说，SSH是一种网络协议，用于计算机之间的加密登录。目前是每一台 Linux 电脑的标准配置。而大多数 Git 服务器都会选择使用 SSH 公钥来进行授权，所以想要在 GitHub 提交代码的第一步就是要先添加 SSH key 配置。</p>
-<p>命令生成的密钥会存放在两个文件 <strong>id_rsa</strong> 和 <strong>id_rsa.pub</strong> ，而 <strong>id_rsa</strong> 是密钥，<strong>id_rsa.pub</strong> 就是公钥。这两文件默认分别在如下目录里生成：</p>
-<p>Linux/Mac 系统 在 <code>~/.ssh</code> 下，win系统在 <code>/c/Documents and Settings/username/.ssh</code> 下，都是隐藏文件，相信你们有办法查看的。</p>
-<p>接下来要做的是把 <strong>id_rsa.pub</strong> 的内容添加到 GitHub 上，这样你本地的 <strong>id_rsa</strong> 密钥跟 GitHub 上的 <strong>id_rsa.pub</strong> 公钥进行配对，授权成功才可以提交代码。</p>
-<h2 id="2-5-Github-操作"><a href="#2-5-Github-操作" class="headerlink" title="2.5 Github 操作"></a>2.5 Github 操作</h2><h3 id="Push"><a href="#Push" class="headerlink" title="Push"></a><strong>Push</strong></h3><p>如果你本地代码有更新，那么就需要把本地代码推到远程仓库，这样本地仓库跟远程仓库就可以保持同步了。</p>
-<h3 id="Pull"><a href="#Pull" class="headerlink" title="Pull"></a><strong>Pull</strong></h3><p>如果远程仓库有更新，那么需要把远程仓库的最新代码更新到本地，然后保证两端代码的同步。<strong>一般我们在 push 之前都会先 pull ，这样不容易冲突。</strong></p>
-<h3 id="先有远程仓库，后有本地仓库：Clone"><a href="#先有远程仓库，后有本地仓库：Clone" class="headerlink" title="先有远程仓库，后有本地仓库：Clone"></a>先有远程仓库，后有本地仓库：<strong>Clone</strong></h3><p>使用 <code>git clone</code> 命令，将远程仓库复制到本地中。然后，修改本地仓库并进行 <code>git commit</code>。之后，<code>git push origin master</code> 将本地仓库的修改提交到远程仓库中</p>
-<p>通过 <code>git clone</code> 命令复制的仓库，不需要使用 <code>git init</code> 初始化，同时也不需要声明与远程仓库关联（因为已经声明了）。</p>
-<h3 id="先有本地仓库，后有远程仓库：关联本地已有项目"><a href="#先有本地仓库，后有远程仓库：关联本地已有项目" class="headerlink" title="先有本地仓库，后有远程仓库：关联本地已有项目"></a>先有本地仓库，后有远程仓库：关联本地已有项目</h3><p>如果我们本地已经有一个完整的 git 仓库，并且已经进行了很多次 commit ，我们想将本地仓库提交到 github 上。</p>
-<p>假设本地仓库 test2，要提交到 github test 项目中，一般步骤是：</p>
-<ol>
-<li>在 github 创建 test 项目</li>
-<li>在 test2 目录中输入 <code>git remote add origin git@github.com:xxxx/test.git</code> 将本地 test2 项目与 github 的 test 项目关联起来</li>
-<li><code>git push origin master</code> </li>
-</ol>
-<h3 id="合并操作：merge-amp-rebase"><a href="#合并操作：merge-amp-rebase" class="headerlink" title="合并操作：merge &amp; rebase"></a>合并操作：merge &amp; rebase</h3><p><code>git merge branch_a</code> 与 <code>git rebase branch_a</code> 的效果是一样，都是将 <code>branch_a</code> 分支合并到当前的分支中。但两者合并方式不同：rebase 跟 merge 的区别你们可以理解成有两个书架，你需要把两个书架的书整理到一起去，</p>
-<ul>
-<li>第一种做法是 merge ，比较粗鲁暴力，就直接腾出一块地方把另一个书架的书全部放进去，虽然暴力，但是这种做法你可以知道哪些书是来自另一个书架的；</li>
-<li>第二种做法就是 rebase ，他会把两个书架的书先进行比较，按照购书的时间来给他重新排序，然后重新放置好，这样做的好处就是合并之后的书架看起来很有逻辑，但是你很难清晰的知道哪些书来自哪个书架。</li>
-</ul>
-<h3 id="合并冲突"><a href="#合并冲突" class="headerlink" title="合并冲突"></a>合并冲突</h3><p>如果两个分支 a,b 同时修改了同一个位置时，合并到 master 时就会报冲突。不管两个分支合并的先后顺序、中间是否还合并了其他的分支（即任何情况下），都会报冲突。</p>
-<p>虽然会报冲突，但在发生冲突的位置，会显示出两个分支修改的内容。你需要手动地进行正确的合并后，再 <code>git add .</code> 与 <code>git commit</code> 就可以了。</p>
-<h1 id="三、参考"><a href="#三、参考" class="headerlink" title="三、参考"></a>三、参考</h1><p>参考文献如下：</p>
-<ol>
-<li><a href="https://zhuanlan.zhihu.com/p/21487817" target="_blank" rel="noopener">stormzhang 从 0 开始学习 GitHub 系列（强烈推荐）</a></li>
-<li><a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="noopener">git - 简明指南</a></li>
-</ol>
-
+            <p>
+              一、常见命令
+git init : 初始化 git 仓库，即将一个文件夹初始化为一个 git 仓库。具体的操作是创建一个 .git 隐藏文件夹
+git status : 查看仓库的状态
+git add &lt;file&gt; : 将文件提交到暂存区
+git commit -m &lt;代码提交信息
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/12/29/Git-Github-常见命令与概念/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
