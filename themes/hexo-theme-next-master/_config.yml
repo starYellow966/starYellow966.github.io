@@ -141,6 +141,7 @@ menu:
   日志: /archives/ || archive
   标签: /tags/ || tags
   分类: /categories/ || th
+  资料: /books/ || book
   关于我: /about/ || user
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
