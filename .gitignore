@@ -6,5 +6,5 @@ node_modules/
 public/
 .deploy*/
 
-# config filesgit 
-/themes/hexo-theme-next-master/_config.yml
+# config files
+themes/hexo-theme-next-master/_config.yml
