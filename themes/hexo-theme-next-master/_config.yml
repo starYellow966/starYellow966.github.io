@@ -563,12 +563,12 @@ gitment:
 # Demo: https://gitalk.github.io
 # Reference: https://asdfv1929.github.io/2018/01/20/gitalk/, https://liujunzhou.cn/2018/8/10/gitalk-error/#more
 gitalk:
-  enable: false
-  github_id:  # Github repo owner
-  repo:  # Repository name to store issues.
-  client_id:  # Github Application Client ID
-  client_secret:  # Github Application Client Secret
-  admin_user:  # GitHub repo owner and collaborators, only these guys can initialize github issues
+  enable: true
+  github_id:  staryellow966 # Github repo owner
+  repo:  staryellow966.github.io # Repository name to store issues.
+  client_id: b0c18efe2ccb68fa395a # Github Application Client ID
+  client_secret: ae43feefcb7d98e3794fdaf3b67a72bddf218c15 # Github Application Client Secret
+  admin_user: staryellow966 # GitHub repo owner and collaborators, only these guys can initialize github issues
   distraction_free_mode: true # Facebook-like distraction free mode
 
 # Baidu Share
