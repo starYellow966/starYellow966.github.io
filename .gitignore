@@ -7,4 +7,5 @@ public/
 .deploy*/
 
 # config files
+_config.yml
 themes/hexo-theme-next-master/_config.yml
