@@ -143,5 +143,8 @@ Linux/Mac 系统 在 `~/.ssh` 下，win系统在 `/c/Documents and Settings/user
 
 参考文献如下：
 
-1. [stormzhang 从 0 开始学习 GitHub 系列（强烈推荐）](https://zhuanlan.zhihu.com/p/21487817)
+1. [从 0 开始学习 GitHub 系列（强烈推荐入门）. stormzhang](https://zhuanlan.zhihu.com/p/21487817)
 2. [git - 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
+3. [Git教程. 廖雪峰](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+
+PS : 入门教程更推荐第 1 个。相比于廖雪峰老师的，更加快速掌握 git 与 github 核心内容。而廖雪峰老师的资料更像一部工具书，如果不会的命令和功能时，上去搜索一下基本都能找到答案。
